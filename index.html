@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>کلاس‌یار | کلاس آنلاین</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">ک</span><div><b>کلاس‌یار</b><small>کلاس آنلاین شما</small></div></div>
+  <div class="secure">● فضای کلاس زنده</div>
+</header>
+<main>
+<section id="joinPanel" class="join-card">
+  <div class="hero-icon">🎓</div>
+  <p class="eyebrow">یادگیری، از هرجا</p>
+  <h1>به کلاس آنلاین خوش اومدی</h1>
+  <p class="muted">نامت و کد کلاس رو وارد کن تا به معلم و هم‌کلاسی‌هات بپیوندی.</p>
+  <form id="joinForm">
+    <label for="name">نام نمایشی</label>
+    <input id="name" maxlength="40" placeholder="مثلاً آروین" required>
+    <label for="room">کد کلاس</label>
+    <input id="room" maxlength="60" placeholder="مثلاً math-6a" required>
+    <label class="role-label"><input type="checkbox" id="teacher"> ورود به‌عنوان معلم</label>
+    <div id="teacherCodeWrap" class="hidden">
+      <label for="teacherCode">کد معلم</label>
+      <input id="teacherCode" type="password" autocomplete="off" placeholder="کد مخصوص معلم">
+    </div>
+    <label class="consent"><input type="checkbox" id="consent" required> اجازه می‌دهم هنگام ورود، دوربین و میکروفونم را خودم فعال کنم.</label>
+    <button class="primary" type="submit">ورود به کلاس <span>←</span></button>
+    <p id="joinError" class="error" role="alert"></p>
+  </form>
+  <p class="tiny">مرورگر برای استفاده از دوربین و میکروفون اجازه می‌خواهد. آن‌ها فقط پس از انتخاب خودت فعال می‌شوند.</p>
+</section>
+
+<section id="classPanel" class="class-panel hidden">
+  <div class="class-heading">
+    <div><p class="eyebrow">کلاس زنده</p><h1 id="classTitle">کلاس</h1><p id="status" class="muted">در حال اتصال…</p></div>
+    <button id="leaveBtn" class="danger">خروج از کلاس</button>
+  </div>
+  <div id="notice" class="notice">اتصال امن به سرویس تماس زنده در حال آماده‌سازی است.</div>
+  <div id="videoGrid" class="video-grid">
+    <div class="empty-state">هنوز کسی به کلاس وصل نشده است.</div>
+  </div>
+  <div class="controls">
+    <button id="micBtn" class="control" disabled>🎤 میکروفون خاموش</button>
+    <button id="camBtn" class="control" disabled>📷 دوربین خاموش</button>
+    <button id="shareBtn" class="control" disabled>🖥️ اشتراک صفحه</button>
+  </div>
+  <section class="chat-card">
+    <h2>💬 گفت‌وگوی کلاس</h2>
+    <div id="chatMessages" class="chat-messages"><p class="muted">پیام‌های کلاس اینجا نمایش داده می‌شوند.</p></div>
+    <form id="chatForm"><input id="chatInput" maxlength="500" placeholder="پیام بنویس…" autocomplete="off"><button class="primary" type="submit" disabled id="chatSend">ارسال</button></form>
+  </section>
+</section>
+</main>
+<footer>کلاس‌یار · برای کلاس‌های کوچک و بزرگ طراحی شده است</footer>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
